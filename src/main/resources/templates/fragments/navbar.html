@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<body>
+<div th:fragment="common-navbar">
+    <section class="ftco-section">
+        <div class="container-fluid px-md-5">
+            <div class="row justify-content-between mt-3">
+                <div class="col-md-8 order-md-last">
+                    <div class="row">
+                        <div class="col-md-6 text-center">
+                            <a class="navbar-brand" href="#"><h1>Bibi's Stuff</h1></a>
+                        </div>
+                        <div class="col-md-6 d-md-flex align-itens-center justify-content-end">
+                            <p class="order-lg-last d-flex align-itens-center mb-0">
+                                <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa-solid fa-heart"></i></a>
+                                <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa-solid fa-bag-shopping"></i></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex align-itens-center justify-content-start">
+                    <p class="mb-0 d-flex">
+                        <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa-solid fa-user"></i></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-white ftco_navbar bg-white" id="ftco-navbar">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="fa fa-bars"></span> Menu
+                </button>
+                <div class="collapse navbar-collapse" id="ftco-nav">
+                    <ul class="navbar-nav m-auto">
+                        <li class="nav-item"><a href="#" class="nav-link">Todos os Produtos</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Camisetas</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Camisas</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Calças</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Vestidos</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Saias</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Sobre nós</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- END nav -->
+
+    </section>
+    <script src="https://kit.fontawesome.com/8fdd26cc10.js" crossorigin="anonymous"></script>
+</div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+body{
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: normal;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    margin: 0px 10px;
+    font-size: 1.3em;
+}

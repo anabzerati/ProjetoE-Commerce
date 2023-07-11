@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head th:include="~{fragments/base :: head}">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+    <div th:replace="~{fragments/navbar :: common-navbar}"></div>
+    <div class="container">
+        <img src="/images/thumbnail.jpeg" class="img-fluid " alt="Responsive image">
+    </div>
+
+    <div th:include="~{fragments/base :: js}"></div>
+</body>
+</html>
