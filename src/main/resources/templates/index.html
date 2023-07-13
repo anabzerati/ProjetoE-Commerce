@@ -33,6 +33,29 @@
         </button>
     </div>
 
+    <div class="container d-flex flex-row justify-content-around mt-4">
+        <div class="p-2 d-flex flex-column align-itens-center">
+            <a href="#"><img class="p-2 rounded-circle img-fluid figure-img mb-0" alt="avatar1" src="/images/camiseta3.webp" /></a>
+            <span class="p-2 figure-caption text-center">Camisetas</span>
+        </div>
+        <div class="p-2 d-flex flex-column align-itens-center">
+            <a href="#"><img class="p-2 rounded-circle img-fluid figure-img mb-0" alt="avatar1" src="/images/camisa4.jpg" /></a>
+            <span class="p-2 figure-caption text-center">Camisas</span>
+        </div>
+        <div class="p-2 d-flex flex-column align-itens-center">
+            <a href="#"><img class="p-2 rounded-circle img-fluid figure-img mb-0" alt="avatar1" src="/images/calca3.webp" /></a>
+            <span class="p-2 figure-caption text-center">Calças</span>
+        </div>
+        <div class="p-2 d-flex flex-column align-itens-center">
+            <a href="#"><img class="p-2 rounded-circle img-fluid figure-img mb-0" alt="avatar1" src="/images/vestido2.jpg" /></a>
+            <span class="p-2 figure-caption text-center">Vestidos</span>
+        </div>
+        <div class="p-2 d-flex flex-column align-itens-center">
+            <a href="#"><img class="p-2 rounded-circle img-fluid figure-img mb-0" alt="avatar1" src="/images/saia.webp" /></a>
+            <span class="p-2 figure-caption text-center">Saias</span>
+        </div>
+    </div>
+
     <style>
         body{
             font-size: 16px;
@@ -51,6 +74,8 @@
             width: 100vw;
         }
     </style>
+
+    <div th:include="~{fragments/footer :: footer}"></div>
 
     <div th:include="~{fragments/base :: js}"></div>
 </body>
