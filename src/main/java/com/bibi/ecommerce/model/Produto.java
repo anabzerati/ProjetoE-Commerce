@@ -15,19 +15,19 @@ public class Produto {
     @Column(name = "id_produto")
     private int id;
 
-    @Column(name = "estoquePP")
+    @Column(name = "estoque_PP")
     private int estoquePP;
 
-    @Column(name = "estoqueP")
+    @Column(name = "estoque_P")
     private int estoqueP;
 
-    @Column(name = "estoqueM")
+    @Column(name = "estoque_M")
     private int estoqueM;
 
-    @Column(name = "estoqueG")
+    @Column(name = "estoque_G")
     private int estoqueG;
 
-    @Column(name = "estoqueGG")
+    @Column(name = "estoque_GG")
     private int estoqueGG;
 
     @Column(name = "preco", nullable = false)
