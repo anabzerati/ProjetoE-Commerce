@@ -75,6 +75,71 @@
         }
     </style>
 
+    <div class="container">
+        <div class="modal fade" id="modal-login" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header" style="padding: 10px 50px;">
+                        <h4 class="modal-title">Login</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" style="padding:20px 70px;">
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="usrname">E-mail</label>
+                                <input type="text" class="form-control" id="usrname">
+                            </div>
+                            <div class="form-group">
+                                <label for="psw">Senha</label>
+                                <input type="text" class="form-control" id="psw">
+                            </div>
+                            <div class="text-center mb-2">
+                                <button type="submit" class="btn btn-dark btn-block btn-login"><span class="glyphicon glyphicon-off"></span> Login</button>
+                            </div>
+                        </form>
+                        <div class="cadastrar text-center">
+                            <span>Ainda não possui conta?</span>
+                            <a href="#modal-cadastro" data-toggle="modal">Cadastre-se</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .modal-header, h4, .close {
+            background-color: #000;
+            color:white !important;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .modal-header{
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+        }
+
+        .btn-login{
+            border: none;
+            outline: none;
+            box-shadow: none;
+        }
+
+        input[type=text] {
+            background: transparent;
+            border: none;
+            outline: none;
+            border-bottom: 1px solid #000000;
+            box-shadow: none;
+            border-radius: 0;
+            margin-bottom: 20px;
+        }
+  </style>
+
     <div th:include="~{fragments/footer :: footer}"></div>
 
     <div th:include="~{fragments/base :: js}"></div>
