@@ -81,31 +81,72 @@
                 <div class="modal-content">
                     <div class="modal-header" style="padding: 10px 50px;">
                         <h4 class="modal-title">Login</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close shadow-none" data-bs-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body" style="padding:20px 70px;">
                         <form role="form">
                             <div class="form-group">
-                                <label for="usrname">E-mail</label>
-                                <input type="text" class="form-control" id="usrname">
+                                <label for="email">E-mail</label>
+                                <input type="text" class="form-control" id="email">
                             </div>
                             <div class="form-group">
-                                <label for="psw">Senha</label>
-                                <input type="text" class="form-control" id="psw">
+                                <label for="senha">Senha</label>
+                                <input type="text" class="form-control" id="senha">
                             </div>
                             <div class="text-center mb-2">
-                                <button type="submit" class="btn btn-dark btn-block btn-login"><span class="glyphicon glyphicon-off"></span> Login</button>
+                                <button type="submit" class="btn btn-dark btn-block btn-login"><span class="glyphicon glyphicon-off"></span>Entrar</button>
                             </div>
                         </form>
                         <div class="cadastrar text-center">
                             <span>Ainda não possui conta?</span>
-                            <a href="#modal-cadastro" data-toggle="modal">Cadastre-se</a>
+                            <a href="#modal-cadastro" data-bs-toggle="modal" class="link-cadastrar">Cadastre-se</a>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="container">
+        <div class="modal fade" id="modal-cadastro" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header" style="padding: 10px 50px;">
+                        <h4 class="modal-title">Cadastro</h4>
+                        <button type="button" class="close shadow-none" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" style="padding:20px 70px;">
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="nomeCad">Nome</label>
+                                <input type="text" class="form-control" id="nomeCad">
+                            </div>
+                            <div class="form-group">
+                                <label for="emailCad">E-mail</label>
+                                <input type="text" class="form-control" id="emailCad">
+                            </div>
+                            <div class="form-group">
+                                <label for="senhaCad">Senha</label>
+                                <input type="text" class="form-control" id="senhaCad">
+                            </div>
+                            <div class="form-group">
+                                <label for="senhaCad2">Confirmação da senha</label>
+                                <input type="text" class="form-control" id="senhaCad2">
+                            </div>
+                            <div class="text-center mb-2">
+                                <button type="submit" class="btn btn-dark btn-block btn-login"><span class="glyphicon glyphicon-off"></span>Cadastrar</button>
+                            </div>
+                        </form>
+                        <div class="cadastrar text-center">
+                            <span>Já possui conta?</span>
+                            <a href="#modal-login" data-bs-toggle="modal" class="link-cadastrar">Logar</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -124,12 +165,15 @@
         }
 
         .btn-login{
+            font-size: 1.2em;
+            width: 120px;
+            height: 40px;
             border: none;
             outline: none;
             box-shadow: none;
         }
 
-        input[type=text] {
+        input[type=text], input[type=text]:active, input[type=text]:focus {
             background: transparent;
             border: none;
             outline: none;
@@ -138,7 +182,28 @@
             border-radius: 0;
             margin-bottom: 20px;
         }
+
+        .link-cadastrar {
+            font-size: 1.2em;
+            display: inline-block;
+            color: #000;
+            text-decoration: none;
+        }
+
+        .link-cadastrar::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #696969;
+            transition: width .3s;
+        }
+
+        .link-cadastrar:hover::after {
+            width: 100%;
+        }
   </style>
+
 
     <div th:include="~{fragments/footer :: footer}"></div>
 
