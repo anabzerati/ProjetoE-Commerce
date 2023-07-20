@@ -11,10 +11,16 @@
                         <div class="col-md-6 text-center">
                             <a class="navbar-brand text-uppercase fw-bold mb-0" href="#"><h1 class="mb-0">Bibi's Stuff</h1></a>
                         </div>
-                        <div class="col-md-6 d-md-flex align-itens-center justify-content-end">
+<!--                        <div class="col-md-6 d-md-flex align-itens-center justify-content-end">-->
+<!--                            <p class="order-lg-last d-flex align-itens-center mb-0">-->
+<!--                                <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa-solid fa-heart"></i></a>-->
+<!--                                <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa-solid fa-bag-shopping"></i></a>-->
+<!--                            </p>-->
+<!--                        </div>-->
+                        <div sec:authorize="isAnonymous()"  class="col-md-6 d-md-flex align-itens-center justify-content-end">
                             <p class="order-lg-last d-flex align-itens-center mb-0">
-                                <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa-solid fa-heart"></i></a>
-                                <a href="#" class="d-flex align-items-center justify-content-center"><i class="fa-solid fa-bag-shopping"></i></a>
+                                <a href="#modal-login" data-bs-toggle="modal" class="d-flex align-items-center justify-content-center"><i class="fa-solid fa-heart"></i></a>
+                                <a href="#modal-login" data-bs-toggle="modal" class="d-flex align-items-center justify-content-center"><i class="fa-solid fa-bag-shopping"></i></a>
                             </p>
                         </div>
                     </div>

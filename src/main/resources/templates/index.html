@@ -6,6 +6,11 @@
 <body>
     <div th:replace="~{fragments/navbar :: common-navbar}"></div>
 
+    <!--/*@thymesVar id="message" type="com.grupogbd.treinamento.hypertodo.utils.Message"*/-->
+    <div th:if="${usuario} != null" th:object="${usuario}">
+        <span th:text="*{nome}">nome</span>
+    </div>
+
     <div id="carouselExampleIndicators" class="carousel slide">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -77,7 +82,7 @@
 
     <div class="container">
         <div class="modal fade" id="modal-login" role="dialog">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header" style="padding: 10px 50px;">
                         <h4 class="modal-title">Login</h4>
@@ -86,7 +91,12 @@
                         </button>
                     </div>
                     <div class="modal-body" style="padding:20px 70px;">
-                        <form role="form">
+                        <!--/*@thymesVar id="message" type="com.grupogbd.treinamento.hypertodo.utils.Message"*/-->
+                        <div th:if="${message} != null" th:object="${message}" th:class="*{type}">
+                            <span th:text="*{title}">Title</span>
+                            <span th:text="*{message}">Message</span>
+                        </div>
+                        <form action="#" th:action="@{/login}" th:object="${usuario}" method="post">
                             <div class="form-group">
                                 <label for="email">E-mail</label>
                                 <input type="text" class="form-control" id="email">
@@ -111,7 +121,7 @@
 
     <div class="container">
         <div class="modal fade" id="modal-cadastro" role="dialog">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header" style="padding: 10px 50px;">
                         <h4 class="modal-title">Cadastro</h4>
@@ -120,25 +130,31 @@
                         </button>
                     </div>
                     <div class="modal-body" style="padding:20px 70px;">
-                        <form role="form">
+                        <!--/*@thymesVar id="message" type="com.grupogbd.treinamento.hypertodo.utils.Message"*/-->
+                        <div th:if="${message} != null" th:object="${message}" th:class="*{type}">
+                            <span th:text="*{title}">Title</span>
+                            <span th:text="*{message}">Message</span>
+                        </div>
+                        <form id="formCadastro">
                             <div class="form-group">
                                 <label for="nomeCad">Nome</label>
-                                <input type="text" class="form-control" id="nomeCad">
+                                <input type="text" class="form-control" id="nomeCad" name="nome" required>
                             </div>
                             <div class="form-group">
                                 <label for="emailCad">E-mail</label>
-                                <input type="text" class="form-control" id="emailCad">
+                                <input type="email" class="form-control" id="emailCad" name="email" required>
                             </div>
                             <div class="form-group">
                                 <label for="senhaCad">Senha</label>
-                                <input type="text" class="form-control" id="senhaCad">
+                                <input type="password" class="form-control" id="senhaCad" name="senha" required>
                             </div>
                             <div class="form-group">
-                                <label for="senhaCad2">Confirmação da senha</label>
-                                <input type="text" class="form-control" id="senhaCad2">
+                                <label for="senhaCadConfirmacao">Confirmação da senha</label>
+                                <input type="password" class="form-control" id="senhaCadConfirmacao" required>
+                                <span id="erro-confirmar-senha" class="form-error hidden">Essas senhas não coincidem</span>
                             </div>
                             <div class="text-center mb-2">
-                                <button type="submit" class="btn btn-dark btn-block btn-login"><span class="glyphicon glyphicon-off"></span>Cadastrar</button>
+                                <button type="submit" class="btn btn-dark btn-block btn-login">Cadastrar</button>
                             </div>
                         </form>
                         <div class="cadastrar text-center">
@@ -157,6 +173,9 @@
             color:white !important;
             text-align: center;
             font-size: 30px;
+            border: none;
+            outline: none;
+            box-shadow: none;
         }
 
         .modal-header{
@@ -173,7 +192,9 @@
             box-shadow: none;
         }
 
-        input[type=text], input[type=text]:active, input[type=text]:focus {
+        input[type=text], input[type=text]:active, input[type=text]:focus,
+        input[type=email], input[type=email]:active, input[type=email]:focus,
+        input[type=password], input[type=password]:active, input[type=password]:focus {
             background: transparent;
             border: none;
             outline: none;
@@ -202,11 +223,15 @@
         .link-cadastrar:hover::after {
             width: 100%;
         }
-  </style>
 
+        .hidden{
+            display: none;
+        }
+  </style>
 
     <div th:include="~{fragments/footer :: footer}"></div>
 
     <div th:include="~{fragments/base :: js}"></div>
+
 </body>
 </html>

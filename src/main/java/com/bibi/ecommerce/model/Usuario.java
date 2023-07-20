@@ -1,5 +1,6 @@
 package com.bibi.ecommerce.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -11,6 +12,7 @@ import java.util.Set;
 
 @Entity
 @Data
+@AllArgsConstructor
 public class Usuario implements UserDetails {
 
     private static final long serialVersionUID = 1L;
@@ -64,4 +66,8 @@ public class Usuario implements UserDetails {
 
     @Override
     public boolean isEnabled() { return true; }
+
+    public void adicionar(Role role) {
+        this.roles.add(role);
+    }
 }
